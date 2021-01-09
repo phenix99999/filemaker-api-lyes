@@ -90,32 +90,33 @@ export class Client {
     }
 
     create<T>(layout: string, fields: Partial<T>, scriptOptions?:{script:string, params?:string[]}) {
-        let data:{[key:string]:string}= {
-            ...fields,
-            '-db': this.db,
-            '-lay': layout,
-            '-new': '',
-        }
+        alert("Allo");
+//         let data:{[key:string]:string}= {
+//             ...fields,
+//             '-db': this.db,
+//             '-lay': layout,
+//             '-new': '',
+//         }
 
-        if (scriptOptions !== undefined){
-            data["-script"] = scriptOptions.script
-            if (scriptOptions.params !== undefined){
-                data["-script.param"] = scriptOptions.params.join('\n')
-            }
-        }
+//         if (scriptOptions !== undefined){
+//             data["-script"] = scriptOptions.script
+//             if (scriptOptions.params !== undefined){
+//                 data["-script.param"] = scriptOptions.params.join('\n')
+//             }
+//         }
 
 
 
-        let options: AxiosRequestConfig = {
-            ...this.getDefaultOptions(),
-            data: qs.stringify(data),
-            method: 'POST'
-        }
+//         let options: AxiosRequestConfig = {
+//             ...this.getDefaultOptions(),
+//             data: qs.stringify(data),
+//             method: 'POST'
+//         }
 
-        return axios(options)
-            .then(response => {
-                return Promise.resolve(extractResponse(response.data))
-            })
+//         return axios(options)
+//             .then(response => {
+//                 return Promise.resolve(extractResponse(response.data))
+//             })
     }
 
     isAuthorized(): Promise<boolean> {
