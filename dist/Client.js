@@ -69,19 +69,19 @@ var Client = /** @class */ (function () {
         });
     };
     Client.prototype.create = function (layout, fields, scriptOptions) {
-        alert("HELLO2");
-        // var data = __assign(__assign({}, fields), { '-db': this.db, '-lay': layout, '-new': '' });
-        // if (scriptOptions !== undefined) {
-        //     data["-script"] = scriptOptions.script;
-        //     if (scriptOptions.params !== undefined) {
-        //         data["-script.param"] = scriptOptions.params.join('\n');
-        //     }
-        // }
-        // var options = __assign(__assign({}, this.getDefaultOptions()), { data: qs_1["default"].stringify(data), method: 'POST' });
-        // return axios_1["default"](options)
-        //     .then(function (response) {
-        //     return Promise.resolve(Parser_1.extractResponse(response.data));
-        // });
+        // alert("HELLO2");
+        var data = __assign(__assign({}, fields), { '-db': this.db, '-lay': layout, '-new': '' });
+        if (scriptOptions !== undefined) {
+            data["-script"] = scriptOptions.script;
+            if (scriptOptions.params !== undefined) {
+                data["-script.param"] = scriptOptions.params.join('\n');
+            }
+        }
+        var options = __assign(__assign({}, this.getDefaultOptions()), { data: qs_1["default"].stringify(data), method: 'POST' });
+        return axios_1["default"](options)
+            .then(function (response) {
+            return Promise.resolve(Parser_1.extractResponse(response.data));
+        });
     };
     Client.prototype.isAuthorized = function () {
         var data = {
