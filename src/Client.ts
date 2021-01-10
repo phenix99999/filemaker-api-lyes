@@ -19,7 +19,7 @@ export class Client {
     rowsPerPage: number
 
     constructor(domain: string, db: string, getAuth: () => string) {
-         this.domain = domfsdafdsaain
+         this.domain = domain
         this.db = db
         this.getAuth = getAuth
         this.rowsPerPage = 200
@@ -88,6 +88,11 @@ export class Client {
                 return Promise.resolve(extractResponse(response.data))
             })
     }
+
+    create2<T>(layout: string, fields: Partial<T>, scriptOptions?:{script:string, params?:string[]}) {
+        alert("ET VOILA");
+    }
+
 
     create<T>(layout: string, fields: Partial<T>, scriptOptions?:{script:string, params?:string[]}) {
         alert("Allo");
