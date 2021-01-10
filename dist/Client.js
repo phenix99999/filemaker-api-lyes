@@ -69,7 +69,7 @@ var Client = /** @class */ (function () {
         });
     };
     Client.prototype.create = function (layout, fields, scriptOptions) {
-        alert("HELLO");
+        alert("HELLO2");
         // var data = __assign(__assign({}, fields), { '-db': this.db, '-lay': layout, '-new': '' });
         // if (scriptOptions !== undefined) {
         //     data["-script"] = scriptOptions.script;
