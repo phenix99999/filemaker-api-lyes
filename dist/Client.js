@@ -76,8 +76,7 @@ var Client = /** @class */ (function () {
         });
     };
     Client.prototype.create = function (layout, fields, scriptOptions) {
-        // alert("HELLO2");
-        alert("hello2");
+    
         var data = __assign(__assign({}, fields), { '-db': this.db, '-lay': layout, '-new': '' });
         if (scriptOptions !== undefined) {
             data = { '-db': this.db, '-lay': layout, '-new': '' };
