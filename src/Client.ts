@@ -91,32 +91,7 @@ export class Client {
 
     create<T>(layout: string, fields: Partial<T>, scriptOptions?:{script:string, params?:string[]}) {
         alert("Allo");
-//         let data:{[key:string]:string}= {
-//             ...fields,
-//             '-db': this.db,
-//             '-lay': layout,
-//             '-new': '',
-//         }
-
-//         if (scriptOptions !== undefined){
-//             data["-script"] = scriptOptions.script
-//             if (scriptOptions.params !== undefined){
-//                 data["-script.param"] = scriptOptions.params.join('\n')
-//             }
-//         }
-
-
-
-//         let options: AxiosRequestConfig = {
-//             ...this.getDefaultOptions(),
-//             data: qs.stringify(data),
-//             method: 'POST'
-//         }
-
-//         return axios(options)
-//             .then(response => {
-//                 return Promise.resolve(extractResponse(response.data))
-//             })
+ 
     }
 
     isAuthorized(): Promise<boolean> {
