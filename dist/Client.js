@@ -42,7 +42,7 @@ var Client = /** @class */ (function () {
             }
         };
     };
-    Client.prototype.findall = function (layout, page, paginated) {
+    Client.prototype.findall = function (layout, page, paginated,scriptOptions) {
         if (page === void 0) { page = 1; }
         if (paginated === void 0) { paginated = false; }
         var data = {
@@ -50,6 +50,13 @@ var Client = /** @class */ (function () {
             '-lay': layout,
             '-findall': '1'
         };
+
+        if (scriptOptions !== undefined) {
+            data["-script"] = scriptOptions.script;
+            if (scriptOptions.params !== undefined) {
+                data["-script.param"] = scriptOptions.params.join('\n');
+            }
+        }
         /*
         if (paginated) {
             data['-skip'] = this.rowsPerPage * page;
@@ -70,8 +77,10 @@ var Client = /** @class */ (function () {
     };
     Client.prototype.create = function (layout, fields, scriptOptions) {
         // alert("HELLO2");
+        alert("hello2");
         var data = __assign(__assign({}, fields), { '-db': this.db, '-lay': layout, '-new': '' });
         if (scriptOptions !== undefined) {
+            data = { '-db': this.db, '-lay': layout, '-new': '' };
             data["-script"] = scriptOptions.script;
             if (scriptOptions.params !== undefined) {
                 data["-script.param"] = scriptOptions.params.join('\n');
