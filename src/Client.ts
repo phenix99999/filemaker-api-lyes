@@ -19,8 +19,7 @@ export class Client {
     rowsPerPage: number
 
     constructor(domain: string, db: string, getAuth: () => string) {
-        console.log("HELLO");
-        this.domain = domain
+         this.domain = domfsdafdsaain
         this.db = db
         this.getAuth = getAuth
         this.rowsPerPage = 200
